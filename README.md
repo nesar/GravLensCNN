@@ -1,4 +1,8 @@
-# ConvLens - Graviatational lensing study using convolutional neural network
+Implementing 4 deep learning schemes for Gravitational lensing analysis.
 
-Automated identification of galaxy-galaxy gravitational lensing implemented on Keras. The binary classification module is trainable on lensed and unlensed images. 
+* ConvNet Classification: Aimed at automated identification of lensing images in astronomical surveys.
+* ConvNet Regression: For a non-linear regression on strong lensing images from the simulations. 
+* Convolutional Autoencoders: To extract low-level features in lensing images and use them for denoising astronomical images, faster classification algorithms etc. 
+* Generative Adversarial Networks (under development): Aimed at generating new images from convolutional networks trained from simulated images. 
+
 
