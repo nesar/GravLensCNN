@@ -244,9 +244,6 @@ def train(BATCH_SIZE):
                 Image.fromarray(image.astype(np.uint8)).save('../plotsDCGAN/'+
                     str(epoch)+"_"+str(index)+".png")
             
-#            print(10*'~----~3~~~~')
-#            print(np.shape(image_batch))
-#            print(np.shape(generated_images))
             X = np.concatenate((image_batch, generated_images))
             y = [1] * BATCH_SIZE + [0] * BATCH_SIZE
             d_loss = d.train_on_batch(X, y)
@@ -316,7 +313,7 @@ if __name__ == "__main__":
     num_epoch = 5
 
 
-    #Dir0 = '../../'
+    Dir0 = '../../'
     Dir1 = Dir0 + 'AllTrainTestSets/JPG/'
     Dir2 = ['single/', 'stack/'][1]
     Dir3 = ['0/', '1/'][1]
