@@ -136,9 +136,6 @@ class LensData:
 
         return (self.X_train, self.y_train), (self.X_test, self.y_test)
 
-        #return (self.X_train[:,:,:,:], self.y_train), (self.X_test[:,0:28, :,0:28], self.y_test)
-
-
 
 
 
@@ -297,7 +294,7 @@ def generate(BATCH_SIZE, nice=False):
 
     image = image*127.5+127.5
     Image.fromarray(image.astype(np.uint8)).save(
-        "../plotsDCGAN/generated_image_1.png")
+        "../plotsDCGAN/generated_images_1.png")
 
     plt.figure(1)
     plt.imshow(image)
@@ -319,8 +316,7 @@ if __name__ == "__main__":
     num_epoch = 5
 
 
-    Dir0 = '../../'
-    #Dir0 = '/home/nes/Desktop/ConvNetData/lens/'
+    #Dir0 = '../../'
     Dir1 = Dir0 + 'AllTrainTestSets/JPG/'
     Dir2 = ['single/', 'stack/'][1]
     Dir3 = ['0/', '1/'][1]
