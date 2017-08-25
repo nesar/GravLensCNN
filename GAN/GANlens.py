@@ -21,8 +21,10 @@ config = tf.ConfigProto()
 config.gpu_options.allow_growth = True
 session = tf.Session(config=config)
 
-#gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
-#sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
+
+'''
+gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.333)
+sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options))
 
 
 if 'session' in locals() and session is not None:
@@ -37,6 +39,9 @@ sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True, log_device_pl
 
 #print(tf.__version__)
 print(keras.__version__)
+'''
+
+
 
 import os
 os.environ["KERAS_BACKEND"] = "theano"
@@ -214,8 +219,6 @@ opt_gan = Adam(lr=learning_rate_gan, decay=decay_rate)
 GAN.compile(loss='categorical_crossentropy', optimizer= opt_gan)
 GAN.summary()
 
-####################################################################################################
-
 
 
 # Pre-training
@@ -349,7 +352,7 @@ plot_real()
 generator.save(Dir0+'../ModelOutGAN/GANGenerate_' + fileOut + '.hdf5')
 discriminator.save(Dir0+'../ModelOutGAN/GANdiscriminate_' + fileOut + '.hdf5')
 GAN.save(Dir0+'../ModelOutGAN/GAN_' + fileOut + '.hdf5')
-# np.save('ModelOutEncode/Generate' + fileOut + '.npy', training_hist)
+#np.save('ModelOutEncode/Generate' + fileOut + '.npy', training_hist)
 
 
 
