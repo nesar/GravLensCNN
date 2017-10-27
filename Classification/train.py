@@ -78,8 +78,6 @@ def saveModel(ModelFit, fileOut):
     model.save(fileOut+'.hdf5')
     np.save(fileOut+'.npy', training_hist)
 
-
-
     print('final acc - train and val')
     print(train_acc[-1], val_acc[-1])
 
